@@ -133,6 +133,7 @@ module.exports = {
           // directory for faster rebuilds.
           cacheDirectory: true
         }
+        // NOTE: Cannot figure out how to add babel loader plugin antd
       },
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
