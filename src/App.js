@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UsernameField from './LoginFields.js'
+import {UsernameField, PasswordField} from './LoginFields.js';
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,15 +7,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React !!!</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="login">
-          <UsernameField />
+        <div className="login-container">
+          <div className="login">
+            <div className="username">
+              <UsernameField />
+            </div>
+            <div className="password">
+              <PasswordField />
+            </div>
+          </div>
         </div>
       </div>
     );

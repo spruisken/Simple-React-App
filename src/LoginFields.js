@@ -38,4 +38,42 @@ class UsernameField extends Component {
 	}
 }
 
-export default UsernameField;
+class PasswordField extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+		  password: '',
+		};
+	}
+
+	emitEmpty = () => {
+		this.passwordInput.focus();
+		this.setState({ password: '' });
+	}
+
+	onChangePassword = (e) => {
+		this.setState({ password: e.target.value });
+	}
+
+	render() {
+		const { password } = this.state;
+		const suffix = password ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
+
+		return (
+			<Input
+				placeholder="Enter your password"
+				type="password"
+				prefix={<Icon type="key" />}
+				suffix={suffix}
+				value={password}
+				onChange={this.onChangePassword}
+				ref={node => this.passwordInput = node}
+			/>
+		);
+	}
+}
+
+module.exports = {
+	UsernameField: UsernameField,
+	PasswordField: PasswordField
+}
